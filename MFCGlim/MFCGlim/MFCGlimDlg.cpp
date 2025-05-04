@@ -79,7 +79,7 @@ BEGIN_MESSAGE_MAP(CMFCGlimDlg, CDialogEx)
 	ON_WM_DESTROY()
 	ON_BN_CLICKED(IDC_BTN_Radius_enter, &CMFCGlimDlg::OnBnClickedRadiusenter)
 	ON_BN_CLICKED(IDC_BTN_Thickness_enter, &CMFCGlimDlg::OnBnClickedThicknessenter)
-	ON_BN_CLICKED(IDC_BTN_RST, &CMFCGlimDlg::OnBnClickedBtnInit)
+	ON_BN_CLICKED(IDC_BTN_RST, &CMFCGlimDlg::OnBnClickedBtnRST)
 	ON_BN_CLICKED(IDC_BTN_Random, &CMFCGlimDlg::OnBnClickedBtnRandom)
 END_MESSAGE_MAP()
 
@@ -206,12 +206,34 @@ void CMFCGlimDlg::OnBnClickedThicknessenter()
 	}
 }
 
-void CMFCGlimDlg::OnBnClickedBtnInit()
+void CMFCGlimDlg::OnBnClickedBtnRST()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (m_pCGlimImage) {
+		m_pCGlimImage->ResetAll();  // 자식 다이얼로그의 초기화 호출
+	}
 }
 
 void CMFCGlimDlg::OnBnClickedBtnRandom()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	if (m_pCGlimImage)
+	{
+		m_pCGlimImage->RandomMovePoints();
+	}
+}
+
+void  CMFCGlimDlg::UpdateCoord(int index, CPoint pt) {
+	CString str;
+	str.Format(_T("(%d, %d)"), pt.x, pt.y);
+	switch (index)
+	{
+	case 0:
+		SetDlgItemText(IDC_EDIT_Coord_1, str);
+		break;
+	case 1:
+		SetDlgItemText(IDC_EDIT_Coord_2, str);
+		break;
+	case 2:
+		SetDlgItemText(IDC_EDIT_Coord_3, str);
+		break;
+	}
 }

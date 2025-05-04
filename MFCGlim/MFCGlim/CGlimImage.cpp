@@ -10,9 +10,10 @@
 #include "MFCGlimDlg.h"
 #include "iostream"	
 #include <cmath>
+#include <chrono>
 
 using namespace std;
-
+using namespace chrono;
 #pragma comment(linker, "/entry:mainCRTStartup /subsystem:console")
 // CGlimImage 대화 상자
 
@@ -119,6 +120,12 @@ void CGlimImage::OnLButtonDown(UINT nFlags, CPoint point)
 	}
 	circles.push_back(newCircle);
 	strTmp.Format(_T("%03d,%03d"), m_ptMouse.x, m_ptMouse.y);
+	CWnd* pParent = GetParent();
+	if (pParent && pParent->IsKindOf(RUNTIME_CLASS(CMFCGlimDlg)))
+	{
+		((CMFCGlimDlg*)pParent)->UpdateCoord((int)circles.size() - 1, point);
+	}
+
 	Invalidate(); // 화면 다시 그리기 요청
 	CDialogEx::OnLButtonDown(nFlags, point);
 	//cout << "Mouse: " << m_ptMouse.x << ", " << m_ptMouse.y << endl;
@@ -188,5 +195,50 @@ void CGlimImage::OnLButtonUp(UINT nFlags, CPoint point)
 		ReleaseCapture(); 
 	}
 	CDialogEx::OnLButtonUp(nFlags, point);
+}
+
+void CGlimImage::ResetAll() {
+	circles.clear();          // 점 목록 초기화
+	CWnd* pParent = GetParent();
+	if (pParent && pParent->IsKindOf(RUNTIME_CLASS(CMFCGlimDlg)))
+	{
+		CMFCGlimDlg* pDlg = (CMFCGlimDlg*)pParent;
+		for (int i = 0; i < 3; ++i)
+			pDlg->UpdateCoord(i, CPoint(0, 0)); // 또는 빈 문자열로 초기화
+	}
+
+	m_nDragIndex = -1;        // 드래그 중인 점 인덱스 초기화
+	m_bDragging = false;      // 드래그 상태 초기화
+	Invalidate();             // 화면 다시 그리기 요청
+}
+
+void CGlimImage::RandomMovePoints()
+{
+	std::thread([this]() {
+		CRect rect;
+		this->GetClientRect(&rect);
+
+		for (int i = 0; i < 10; ++i)
+		{
+			// 랜덤하게 3개 점 이동
+			for (auto& circle : circles)
+			{
+				circle.x = rand() % rect.Width();
+				circle.y = rand() % rect.Height();
+			}
+			CWnd* pParent = GetParent();
+			if (pParent && pParent->IsKindOf(RUNTIME_CLASS(CMFCGlimDlg)))
+			{
+				CMFCGlimDlg* pDlg = (CMFCGlimDlg*)pParent;
+				for (int j = 0; j < circles.size(); ++j)
+				{
+					pDlg->UpdateCoord(j, CPoint(circles[j].x, circles[j].y));
+				}
+			}
+
+			this->Invalidate();  // 다시 그리기 요청
+			std::this_thread::sleep_for(milliseconds(500));
+		}
+		}).detach();
 }
 

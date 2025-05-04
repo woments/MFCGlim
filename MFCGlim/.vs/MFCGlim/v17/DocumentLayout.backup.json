@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\MFCGlim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\CGlimImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\MFCGlimDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\framework.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\MFCGlimDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\CGlimImage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\CGlimImage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\MFCGlimDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{60306049-062A-AD1F-2B4E-09F0EB6D5AD8}|MFCGlim\\MFCGlim.vcxproj|solutionrelative:MFCGlim\\MFCGlim.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
     }
   ],
   "DocumentGroupContainers": [
@@ -38,39 +34,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "framework.h",
-              "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\framework.h",
-              "RelativeDocumentMoniker": "MFCGlim\\framework.h",
-              "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\framework.h",
-              "RelativeToolTip": "MFCGlim\\framework.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "MFCGlimDlg.h",
+              "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.h",
+              "RelativeDocumentMoniker": "MFCGlim\\MFCGlimDlg.h",
+              "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.h",
+              "RelativeToolTip": "MFCGlim\\MFCGlimDlg.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-04T16:04:35.096Z",
+              "WhenOpened": "2025-05-04T16:52:21.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Resource.h",
-              "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\resource.h",
-              "RelativeDocumentMoniker": "MFCGlim\\resource.h",
-              "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\resource.h",
-              "RelativeToolTip": "MFCGlim\\resource.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-04T16:01:14.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MFCGlimDlg.cpp",
               "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.cpp",
               "RelativeDocumentMoniker": "MFCGlim\\MFCGlimDlg.cpp",
               "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlimDlg.cpp",
               "RelativeToolTip": "MFCGlim\\MFCGlimDlg.cpp",
-              "ViewState": "AgIAACUAAAAAAAAAAAAIwDoAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAlwOUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T15:29:24.094Z",
               "EditorCaption": ""
@@ -78,12 +61,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MFCGlim.rc - IDD_MFCGLIM_DIALOG - Dialog",
+              "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.rc",
+              "RelativeDocumentMoniker": "MFCGlim\\MFCGlim.rc",
+              "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.rc - IDD_MFCGLIM_DIALOG - Dialog",
+              "RelativeToolTip": "MFCGlim\\MFCGlim.rc - IDD_MFCGLIM_DIALOG - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-05-04T16:10:53.215Z",
+              "EditorCaption": " - IDD_MFCGLIM_DIALOG - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CGlimImage.h",
               "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.h",
               "RelativeDocumentMoniker": "MFCGlim\\CGlimImage.h",
               "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.h",
               "RelativeToolTip": "MFCGlim\\CGlimImage.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-04T14:42:27.244Z",
               "EditorCaption": ""
@@ -91,25 +86,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MFCGlim.cpp",
-              "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.cpp",
-              "RelativeDocumentMoniker": "MFCGlim\\MFCGlim.cpp",
-              "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim.cpp",
-              "RelativeToolTip": "MFCGlim\\MFCGlim.cpp",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwDQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-04T15:20:16.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "CGlimImage.cpp",
               "DocumentMoniker": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.cpp",
               "RelativeDocumentMoniker": "MFCGlim\\CGlimImage.cpp",
               "ToolTip": "C:\\Users\\woosu\\Desktop\\MFC\\MFCGlim\\MFCGlim\\MFCGlim\\MFCGlim\\CGlimImage.cpp",
               "RelativeToolTip": "MFCGlim\\CGlimImage.cpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAmwHIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAUwOAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-04T14:42:16.135Z",
               "EditorCaption": ""

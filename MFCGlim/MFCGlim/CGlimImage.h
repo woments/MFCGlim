@@ -2,7 +2,8 @@
 #include "afxdialogex.h"
 
 #include <vector>
-
+#include <thread>
+#include <chrono>
 // CGlimImage 대화 상자
 
 class CGlimImage : public CDialogEx
@@ -47,6 +48,9 @@ public:
 	void SetThickness(int thickness);
 	void drawData(Graphics* pGraphics);
 	void DrawCircumscribedCircle(Graphics* pGraphics);
+	void ResetAll();
+	void RandomMovePoints();
+	void threadRandomMove(CGlimImage* pImage);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 };

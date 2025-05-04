@@ -42,6 +42,7 @@ public:
 	int Radius_value;
 	afx_msg void OnBnClickedThicknessenter();
 	int Thickness_Value;
-	afx_msg void OnBnClickedBtnInit();
+	afx_msg void OnBnClickedBtnRST();
 	afx_msg void OnBnClickedBtnRandom();
+	void UpdateCoord(int index, CPoint pt);
 };
