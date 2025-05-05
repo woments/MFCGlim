@@ -1,0 +1,31 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+pair<int, int> getSlope(pair<int, int> a, pair<int, int> b) {
+    int dx = b.first - a.first;
+    int dy = b.second - a.second;
+    return {dy, dx};
+}
+
+bool isParallel(pair<int, int> s1, pair<int, int> s2) {
+    return s1.first * s2.second == s2.first * s1.second;
+}
+
+int solution(vector<vector<int>> dots) {
+    int answer = 0;
+    pair<int, int> p0 = {dots[0][0],dots[0][1]};
+    pair<int, int> p1 = {dots[1][0],dots[1][1]};
+    pair<int, int> p2 = {dots[2][0],dots[2][1]};
+    pair<int, int> p3 ={dots[3][0],dots[3][1]};
+    
+    if (isParallel(getSlope(p0, p1), getSlope(p2, p3)) ||
+    isParallel(getSlope(p0, p2), getSlope(p1, p3)) ||
+    isParallel(getSlope(p0, p3), getSlope(p1, p2))) {
+    answer = 1;
+}
+
+   
+    return answer;
+}

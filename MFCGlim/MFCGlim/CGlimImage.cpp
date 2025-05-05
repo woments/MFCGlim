@@ -8,13 +8,10 @@
 
 
 #include "MFCGlimDlg.h"
-#include "iostream"	
-#include <cmath>
-#include <chrono>
 
 using namespace std;
 using namespace chrono;
-#pragma comment(linker, "/entry:mainCRTStartup /subsystem:console")
+
 // CGlimImage 대화 상자
 
 IMPLEMENT_DYNAMIC(CGlimImage, CDialogEx)
@@ -44,13 +41,6 @@ END_MESSAGE_MAP()
 
 
 // CGlimImage 메시지 처리기
-
-void CGlimImage::OnBnClickedParent()
-{
-	static int n = 0;
-	CMFCGlimDlg* pDlg = (CMFCGlimDlg*)m_pParent;
-	pDlg->callfunc(n++);
-}
 
 BOOL CGlimImage::OnInitDialog()
 {
@@ -103,8 +93,7 @@ void CGlimImage::InitImage() {
 void CGlimImage::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	m_ptMouse = point;
-	CDialogEx::OnLButtonDown(nFlags, point);
-	CircleData newCircle = { point.x, point.y, m_radius };
+	CircleData newCircle = { point.x, point.y, m_nradius };
 	if (circles.size() >= 3) {
 		for (size_t i = 0; i < circles.size(); ++i) {
 			int dx = point.x - circles[i].x;
@@ -112,7 +101,7 @@ void CGlimImage::OnLButtonDown(UINT nFlags, CPoint point)
 			if (sqrt(dx * dx + dy * dy) <= circles[i].radius) {
 				m_bDragging = true;
 				m_nDragIndex = i;
-				SetCapture(); // 마우스 캡처 (창 밖으로 나가도 추적)
+				SetCapture(); 
 				break;
 			}
 		}
@@ -125,25 +114,25 @@ void CGlimImage::OnLButtonDown(UINT nFlags, CPoint point)
 	{
 		((CMFCGlimDlg*)pParent)->UpdateCoord((int)circles.size() - 1, point);
 	}
-
-	Invalidate(); // 화면 다시 그리기 요청
+	Invalidate(); 
 	CDialogEx::OnLButtonDown(nFlags, point);
-	//cout << "Mouse: " << m_ptMouse.x << ", " << m_ptMouse.y << endl;
 }
 
 
 void CGlimImage::SetRadius(int radius)
 {
-	m_radius = radius;
+	m_nradius = radius;
+	for (auto& circle : circles) {
+		circle.radius = radius;
+	}
 	Invalidate(); 
 }
 
 void CGlimImage::SetThickness(int thickness)
 {
-	m_thickness = thickness;
+	m_nthickness = thickness;
 	Invalidate(); 
 }
-
 
 void CGlimImage::drawData(Graphics* pGraphics)
 {
@@ -157,24 +146,24 @@ void CGlimImage::drawData(Graphics* pGraphics)
 }
 
 void CGlimImage::DrawCircumscribedCircle(Graphics* pGraphics) {
-	// 세 점을 (x1, y1), (x2, y2), (x3, y3)로 정의
+	
 
-	int thickness = m_thickness;
+	int thickness = m_nthickness;
 	int x1 = circles[0].x, y1 = circles[0].y;
 	int x2 = circles[1].x, y2 = circles[1].y;
 	int x3 = circles[2].x, y3 = circles[2].y;
 
-	// 외접원의 중심 (Xc, Yc) 구하기
+	
 	double D = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
 
 	double Xc = ((x1 * x1 + y1 * y1) * (y2 - y3) + (x2 * x2 + y2 * y2) * (y3 - y1) + (x3 * x3 + y3 * y3) * (y1 - y2)) / D;
 	double Yc = ((x1 * x1 + y1 * y1) * (x3 - x2) + (x2 * x2 + y2 * y2) * (x1 - x3) + (x3 * x3 + y3 * y3) * (x2 - x1)) / D;
 
-	// 반지름 R 구하기 (세 점 중 하나로 거리 계산)
+	
 	double R = sqrt((x1 - Xc) * (x1 - Xc) + (y1 - Yc) * (y1 - Yc));
 
-	// 원 그리기
-	Pen pen(Color(0xff, 0x00, 0x00, 0x00), m_thickness);
+
+	Pen pen(Color(0xff, 0x00, 0x00, 0x00), m_nthickness);
 	pGraphics->DrawEllipse(&pen, (float)(Xc - R), (float)(Yc - R), (float)(2 * R), (float)(2 * R));
 }
 void CGlimImage::OnMouseMove(UINT nFlags, CPoint point)
@@ -198,18 +187,18 @@ void CGlimImage::OnLButtonUp(UINT nFlags, CPoint point)
 }
 
 void CGlimImage::ResetAll() {
-	circles.clear();          // 점 목록 초기화
+	circles.clear();          
 	CWnd* pParent = GetParent();
 	if (pParent && pParent->IsKindOf(RUNTIME_CLASS(CMFCGlimDlg)))
 	{
 		CMFCGlimDlg* pDlg = (CMFCGlimDlg*)pParent;
 		for (int i = 0; i < 3; ++i)
-			pDlg->UpdateCoord(i, CPoint(0, 0)); // 또는 빈 문자열로 초기화
+			pDlg->UpdateCoord(i, CPoint(0, 0)); 
 	}
 
-	m_nDragIndex = -1;        // 드래그 중인 점 인덱스 초기화
-	m_bDragging = false;      // 드래그 상태 초기화
-	Invalidate();             // 화면 다시 그리기 요청
+	m_nDragIndex = -1;       
+	m_bDragging = false;      
+	Invalidate();            
 }
 
 void CGlimImage::RandomMovePoints()
@@ -220,25 +209,25 @@ void CGlimImage::RandomMovePoints()
 
 		for (int i = 0; i < 10; ++i)
 		{
-			// 랜덤하게 3개 점 이동
-			for (auto& circle : circles)
+			for (size_t j = 0; j < circles.size(); ++j)
 			{
-				circle.x = rand() % rect.Width();
-				circle.y = rand() % rect.Height();
-			}
-			CWnd* pParent = GetParent();
-			if (pParent && pParent->IsKindOf(RUNTIME_CLASS(CMFCGlimDlg)))
-			{
-				CMFCGlimDlg* pDlg = (CMFCGlimDlg*)pParent;
-				for (int j = 0; j < circles.size(); ++j)
+				circles[j].x = rand() % rect.Width();
+				circles[j].y = rand() % rect.Height();
+
+				
+				CPoint* pPt = new CPoint(circles[j].x, circles[j].y);
+
+				CWnd* pParent = GetParent();
+				if (pParent)
 				{
-					pDlg->UpdateCoord(j, CPoint(circles[j].x, circles[j].y));
+					pParent->PostMessage(WM_UPDATE_COORD, (WPARAM)j, (LPARAM)pPt);
 				}
 			}
 
-			this->Invalidate();  // 다시 그리기 요청
-			std::this_thread::sleep_for(milliseconds(500));
+			this->Invalidate(); 
+			std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		}
 		}).detach();
 }
+
 

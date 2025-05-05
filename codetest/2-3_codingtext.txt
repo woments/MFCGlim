@@ -1,0 +1,55 @@
+#include <string>
+#include <vector>
+#include <stdlib.h>
+using namespace std;
+
+int solution(int a, int b, int c, int d) {
+    int answer = 0;
+    int count[7] = {};
+    int num_list[] = {a,b,c,d};
+    int min = num_list[0];
+    int Is_solo = 0;
+    for (int i = 0; i < 4; ++i) {
+        count[num_list[i]]++;
+        if (min > num_list[i]) {
+            min = num_list[i];
+        }
+    }
+        
+    for (int i = 1; i <= 6; ++i){
+            if (count[i] == 4){
+                answer = 1111 * i; 
+            }
+            else if (count[i] == 3){
+                for (int j = 1; j <= 6; ++j) {
+                     if (count[j] == 1){
+                         answer = (10 * i + j) * (10 * i + j);
+                    }
+                }
+            }
+            else if (count[i] == 2){
+                for (int j = 1; j <= 6; ++j){
+                      if (count[j] == 2 && i != j){
+                          answer = (i + j) * abs(i - j);
+                      }
+                      else if(count[j] == 1){
+                          for (int k = 1; k <= 6; ++k){
+                              if (count[k] == 1 && j != k){
+                                answer = j*k;
+                            }
+                              
+                        }
+                    }
+                }
+            }
+            else if (count[i] == 1){
+                Is_solo++;
+                if(Is_solo > 3){
+                    answer = min;
+                }
+            }
+            
+}
+
+    return answer;
+}

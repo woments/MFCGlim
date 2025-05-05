@@ -7,13 +7,10 @@
 #include "MFCGlim.h"
 #include "MFCGlimDlg.h"
 #include "afxdialogex.h"
-
-#include "iostream"	
-using namespace std;
 	
 #ifdef _DEBUG
 #define new DEBUG_NEW
-#pragma comment(linker, "/entry:mainCRTStartup /subsystem:console")
+
 #endif
 
 
@@ -81,6 +78,7 @@ BEGIN_MESSAGE_MAP(CMFCGlimDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BTN_Thickness_enter, &CMFCGlimDlg::OnBnClickedThicknessenter)
 	ON_BN_CLICKED(IDC_BTN_RST, &CMFCGlimDlg::OnBnClickedBtnRST)
 	ON_BN_CLICKED(IDC_BTN_Random, &CMFCGlimDlg::OnBnClickedBtnRandom)
+	ON_MESSAGE(WM_UPDATE_COORD, &CMFCGlimDlg::OnUpdateCoord)
 END_MESSAGE_MAP()
 
 
@@ -173,7 +171,16 @@ HCURSOR CMFCGlimDlg::OnQueryDragIcon()
 }
 
 
+LRESULT CMFCGlimDlg::OnUpdateCoord(WPARAM wParam, LPARAM lParam)
+{
+	int index = (int)wParam;
+	CPoint pt = *(CPoint*)lParam;
 
+	UpdateCoord(index, pt);
+
+	delete (CPoint*)lParam; // 동적 할당 해제 필수!
+	return 0;
+}
 
 void CMFCGlimDlg::OnDestroy()
 {
@@ -182,10 +189,6 @@ void CMFCGlimDlg::OnDestroy()
 	delete m_pCGlimImage;
 }
 
-void CMFCGlimDlg::callfunc(int n) {
-	int nData = n;
-	cout << nData << endl;
-}
 
 
 void CMFCGlimDlg::OnBnClickedRadiusenter()
@@ -194,7 +197,6 @@ void CMFCGlimDlg::OnBnClickedRadiusenter()
 	if (m_pCGlimImage) {
 		m_pCGlimImage->SetRadius(Radius_value);
 	}
-	
 }
 
 
@@ -209,14 +211,13 @@ void CMFCGlimDlg::OnBnClickedThicknessenter()
 void CMFCGlimDlg::OnBnClickedBtnRST()
 {
 	if (m_pCGlimImage) {
-		m_pCGlimImage->ResetAll();  // 자식 다이얼로그의 초기화 호출
+		m_pCGlimImage->ResetAll();  
 	}
 }
 
 void CMFCGlimDlg::OnBnClickedBtnRandom()
 {
-	if (m_pCGlimImage)
-	{
+	if (m_pCGlimImage){
 		m_pCGlimImage->RandomMovePoints();
 	}
 }

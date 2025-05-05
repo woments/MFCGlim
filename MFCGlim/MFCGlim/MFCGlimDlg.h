@@ -4,6 +4,7 @@
 #include "CGlimImage.h"
 #pragma once
 
+#define WM_UPDATE_COORD (WM_USER + 1)
 
 // CMFCGlimDlg 대화 상자
 class CMFCGlimDlg : public CDialogEx
@@ -36,8 +37,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnDestroy();
-
-	void callfunc(int n);
 	afx_msg void OnBnClickedRadiusenter();
 	int Radius_value;
 	afx_msg void OnBnClickedThicknessenter();
@@ -45,4 +44,5 @@ public:
 	afx_msg void OnBnClickedBtnRST();
 	afx_msg void OnBnClickedBtnRandom();
 	void UpdateCoord(int index, CPoint pt);
+	afx_msg LRESULT OnUpdateCoord(WPARAM wParam, LPARAM lParam);
 };

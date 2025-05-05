@@ -4,6 +4,8 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include <cmath>
+
 // CGlimImage 대화 상자
 
 class CGlimImage : public CDialogEx
@@ -18,8 +20,8 @@ public:
 	CWnd* m_pParent;
 	CPoint m_ptMouse;
 	CString strTmp;
-	int m_radius = 1;
-	int m_thickness = 1;
+	int m_nradius = 1;
+	int m_nthickness = 1;
 	int m_nDataCount = 0;	
 	struct CircleData {
 		int x, y;
@@ -39,7 +41,6 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnBnClickedParent();
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 	void InitImage();
@@ -50,7 +51,6 @@ public:
 	void DrawCircumscribedCircle(Graphics* pGraphics);
 	void ResetAll();
 	void RandomMovePoints();
-	void threadRandomMove(CGlimImage* pImage);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 };
